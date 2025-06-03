@@ -1,0 +1,58 @@
+<div class="main-content">
+    <mat-card class="booking-card">
+        <mat-card-title class="title-center">Booking Form</mat-card-title>
+        <mat-card-content>
+            <form [formGroup]="bookingForm" (ngSubmit)="submit()">
+
+                <div class="grid-row grid-3cols">
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>First Name</mat-label>
+                        <input matInput formControlName="firstname" />
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Last Name</mat-label>
+                        <input matInput formControlName="lastname" />
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Total Price</mat-label>
+                        <input matInput type="number" formControlName="totalprice" />
+                    </mat-form-field>
+                </div>
+
+                <div class="grid-row grid-1col deposit-row">
+                    <mat-checkbox formControlName="depositpaid">Deposit Paid</mat-checkbox>
+                </div>
+
+                <div formGroupName="bookingdates" class="grid-row grid-2cols">
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Check-in</mat-label>
+                        <input matInput type="date" formControlName="checkin" />
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Check-out</mat-label>
+                        <input matInput type="date" formControlName="checkout" />
+                    </mat-form-field>
+                </div>
+
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>Additional Needs</mat-label>
+                    <input matInput formControlName="additionalneeds" />
+                </mat-form-field>
+
+                <mat-card-actions class="card-button">
+                    <button mat-raised-button color="primary" type="submit" (click)="backPage()">
+                        Back
+                    </button>
+                    <button mat-raised-button color="primary" type="submit">
+                        Submit
+                    </button>
+                </mat-card-actions>
+
+            </form>
+        </mat-card-content>
+    </mat-card>
+
+</div>
